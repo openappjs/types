@@ -1,21 +1,21 @@
 {
-  "name": "oa-type",
+  "name": "oa-types",
   "version": "0.0.0",
-  "description": "OpenApp abstract type",
+  "description": "OpenApp type registry",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/open-app/type"
+    "url": "git://github.com/open-app/types"
   },
   "author": "open-app",
   "license": "AGPLv3",
   "bugs": {
-    "url": "https://github.com/open-app/type/issues"
+    "url": "https://github.com/open-app/types/issues"
   },
-  "homepage": "https://github.com/open-app/type",
+  "homepage": "https://github.com/open-app/types",
   "dependencies": {
     "es6-map": "^0.1.0",
     "inherits": "^2.0.1",
