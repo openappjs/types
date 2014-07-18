@@ -1,32 +1,6 @@
 var expect = require('chai').expect;
 var jjv = require('jjv');
 
-var person = {
-  name: "Person",
-  prefixes: {
-    "": "http://schema.org/",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "org": "http://www.w3.org/TR/vocab-org#",
-  },
-  schema: {
-    type: 'object',
-    properties: {
-      name: {
-        type: "string",
-        context: "foaf:name",
-      },
-      memberships: {
-        type: "array",
-        context: "org:hasMembership",
-        items: {
-          reverse: "member",
-          $ref: "Membership",
-        },
-      },
-    },
-  },
-};
-
 describe("#types", function () {
   var env = jjv();
   var Types;
@@ -44,6 +18,7 @@ describe("#types", function () {
   });
 
   it("should add person type", function () {
+    var person = require('../lib/Person');
     types.set(person);
     var personType = types.get(person.name);
     expect(personType).to.exist;
@@ -55,6 +30,7 @@ describe("#types", function () {
   });
 
   it("should be idempotent", function () {
+    var person = require('../lib/Person');
     types.set(person);
   });
 })
