@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/open-app/types",
   "dependencies": {
+    "debug": "^1.0.4",
     "es6-map": "^0.1.0",
     "inherits": "^2.0.1",
     "oa-type": "git://github.com/open-app/type"

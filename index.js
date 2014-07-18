@@ -1,9 +1,11 @@
+var debug = require('debug')('oa-types');
 var inherits = require('inherits');
 var Map = require('es6-map');
 
 var Type = require('oa-type');
 
 function Types (env) {
+  debug("constructor", env);
   // call new constructor if not already
   if (!(this instanceof Types)) return new Types(env);
 
@@ -22,6 +24,7 @@ function Types (env) {
 inherits(Types, Map);
 
 Types.prototype._set = function (type) {
+  debug("set", type);
 
   // if not instanceof Type, make into type
   if (!(type instanceof Type)) {
