@@ -4,4 +4,4 @@
 
 ### work in progress
 
-see tests for more info
+see `lib` for example types and `test` for usage of these examples.
