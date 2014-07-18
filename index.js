@@ -1,4 +1,5 @@
 var debug = require('debug')('oa-types');
+var jjv = require('jjv');
 var inherits = require('inherits');
 var Map = require('es6-map');
 
@@ -10,7 +11,7 @@ function Types (env) {
   if (!(this instanceof Types)) return new Types(env);
 
   // save jjv environment
-  this.env = env;
+  this.env = env || jjv();
   
   // call Map constructor on this
   Map.call(this);
