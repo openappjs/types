@@ -20,6 +20,7 @@ describe("#types", function () {
   it("should add person type", function () {
     var person = require('../lib/Person');
     var personType = types.use(person);
+    expect(types.get(person.name)).to.equal(personType);
     expect(personType).to.exist;
     expect(personType).to.have.property("name", person.name);
     expect(personType).to.have.property("schema", person.schema);
