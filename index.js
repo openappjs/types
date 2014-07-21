@@ -15,16 +15,10 @@ function Types (env) {
   
   // call Map constructor on this
   Map.call(this);
-
-  // save Map.set
-  this.__set = this.set;
-  // and use our set function
-  this.set = this._set;
-  delete this._set;
 }
 inherits(Types, Map);
 
-Types.prototype._set = function (type) {
+Types.prototype.use = function (type) {
   debug("set", type);
 
   // if not instanceof Type, make into type
@@ -32,7 +26,9 @@ Types.prototype._set = function (type) {
     type = new Type(this.env, type);
   }
 
-  return this.__set(type.name, type);
+  this.set(type.name, type);
+
+  return type;
 };
 
 module.exports = Types;
