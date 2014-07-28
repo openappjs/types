@@ -12,18 +12,20 @@ describe("#types", function () {
   });
 
   it("should create new types map", function () {
-    types = new Types(env);
+    types = new Types({
+      env: env,
+    });
     expect(types).to.exist;
     expect(types).to.have.property("env", env);
   });
 
   it("should add person type", function () {
-    var person = require('../lib/Person');
-    var personType = types.use(person);
-    expect(types.get(person.name)).to.equal(personType);
+    var personSchema = require('../lib/Person');
+    var personType = types.use(personSchema);
+    expect(types.get(personSchema.id)).to.equal(personType);
     expect(personType).to.exist;
-    expect(personType).to.have.property("name", person.name);
-    expect(personType).to.have.property("schema", person.schema);
+    expect(personType).to.have.property("id", personSchema.id);
+    expect(personType).to.have.property("schema", personSchema);
     expect(personType).to.have.property("env", env);
     expect(personType).to.have.property("validate");
     expect(personType).to.have.property("context");
