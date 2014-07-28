@@ -14,6 +14,7 @@ describe("#types", function () {
   it("should create new types map", function () {
     types = new Types({
       env: env,
+      types: require('../lib'),
     });
     expect(types).to.exist;
     expect(types).to.have.property("env", env);

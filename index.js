@@ -15,6 +15,14 @@ function Types (options) {
   
   // call Map constructor on this
   Map.call(this);
+
+  // use any given types
+  if (options.types) {
+    for (var id in options.types) {
+      debug("use-ing", options.types[id]);
+      this.use(options.types[id]);
+    }
+  }
 }
 inherits(Types, Map);
 
