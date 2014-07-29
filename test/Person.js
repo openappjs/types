@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var jjv = require('jjv');
 
-describe("#types", function () {
+describe("#oa-types", function () {
   var env = jjv();
   var Types;
   var types;
