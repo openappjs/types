@@ -20,17 +20,6 @@ describe("#oa-types", function () {
     expect(types).to.have.property("env", env);
   });
 
-  it("should add person type", function () {
-    var personSchema = require('../lib/Person');
-    var personType = types.use(personSchema);
-    expect(types.get(personSchema.id)).to.equal(personType);
-    expect(personType).to.exist;
-    expect(personType).to.have.property("id", personSchema.id);
-    expect(personType).to.have.property("schema", personSchema);
-    expect(personType).to.have.property("env", env);
-    expect(personType).to.have.property("validate");
-    expect(personType).to.have.property("context");
-  });
 
   it("should be idempotent", function () {
     var person = require('../lib/Person');
