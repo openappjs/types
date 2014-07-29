@@ -6,6 +6,7 @@ var Map = require('es6-map');
 var Type = require('oa-type');
 
 function Types (options) {
+  options = options || {};
   debug("constructor", options);
   // call new constructor if not already
   if (!(this instanceof Types)) return new Types(options);
