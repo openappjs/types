@@ -20,9 +20,15 @@ describe("#oa-types", function () {
     expect(types).to.have.property("env", env);
   });
 
+  describe("Person", function () {
 
-  it("should be idempotent", function () {
-    var person = require('../lib/Person');
-    types.set(person);
+    it("should have correct context", function () {
+      expect(types.get("Person").context())
+      .to.deep.equal({
+        "@vocab": "http://schema.org/",
+        "org": "http://www.w3.org/TR/vocab-org#",
+        "memberships": "org:hasMembership",
+      });
+    });
   });
-})
+});
